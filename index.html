@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CursoVueJs</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <style>
+
+
+    </style>
+</head>
+<body>
+
+    <div id="app" class="container mt-5">
+        <h1 style="
+        color: white;
+        position: fixed;
+        top: 20px;
+        right: 40px;
+        z-index: 2;">{{soporteCara}}</h1>
+        <div class="pantalla">
+            <div :class="['soporte', soporteCara]">
+                <windows-template
+                    v-for="opcion in opciones"
+                    :version="opcion+'.jpg'"
+                    :class="['windows','windows'+opcion]"
+                    :opcion="opcion"
+                    :opciones="opciones"
+                    @windows-hijo="soporteCara = $event"
+                ></windows-template>
+            </div>
+        </div>
+    </div>          
+    <script src="nav-template.js"></script>
+    <script src="windows-template.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
