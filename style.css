@@ -1,5 +1,6 @@
+
+
 html {
-    font-size: calc(0.5em + 0.5vw);
     user-select: none;
 }
 body {
@@ -46,10 +47,12 @@ body {
     text-align: center;
 }
 
-.windows10  { 
+.windows10  {
+    font-family: 'Segoe UI Regular';
     transform: rotateY(0deg) translateZ(calc(100vw/2));
 }
 .windows7 { 
+    font-family: 'Segoe UI Regular';
     transform: rotateY(90deg) translateZ(calc(100vw/2));
 }
 .windowsxp { 
@@ -57,37 +60,7 @@ body {
 }
 .windows98 { 
     transform: rotateY(-90deg) translateZ(calc(100vw/2));
-}
-p {
-    background-color: #213541;
-    bottom: 0;
-    color: white;
-    display: flex;
-    justify-content: space-evenly;
-    margin: 0;
-    padding: 8px;
-    position: absolute;
-    width: 100vw;
-}
-p > * {
-    cursor: pointer;
-}
-p > *:active {
-    transform: translateY(1px);
-}
-p.p98 span:last-of-type {
-    border: 2px inset #fff;
-    padding: 0 10px;
-}
-.p98 {
-    background-color: silver;
-    border-top: 2px outset #fff;
-}
-.pxp {
-    background-color: rgb(0, 39, 212);
-}
-.p7 {
-    background-color: rgba(132, 134, 255, 0.37);
+    background-color: #354;
 }
 .imagen-fondo {
     height: 100vh;
@@ -98,23 +71,25 @@ p.p98 span:last-of-type {
     z-index: -1;
 }
 nav {
+    display: flex;
     position: absolute;
     top: 0;
     left: 0;
-    display: flex;
     justify-content: center;
     flex-direction: column;
     max-height: calc(100vh - 40px);
     flex-wrap: wrap;
 }
 .icono, nav button {
+    font-size: 0.8em;
     display: block;
-    margin: 10px;
-    width: 75px;
-    height: 75px;
+    margin: 7px 20px;
+    width: 70px;
+    height: 70px;
     border-radius: 10px;
     color: white;
-    text-shadow: 1px 1px 1px black;
+    text-shadow: 1px 1px 3px black;
+    padding: 5px;
 }
 .icono img {
     height: 32px;
@@ -127,11 +102,81 @@ nav button {
     background: transparent;
     border: 3px solid rgba(255, 255, 255, 0.3);
 }
+p {
+    background-color: #213541;
+    bottom: 0;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0;
+    position: absolute;
+    width: 100vw;
+}
+p > * {
+    cursor: pointer;
+}
+.p7 {
+    background-color: rgba(132, 134, 255, 0.37);
+    height: 41px;
+}
+.p98 {
+    background-color: silver;
+    border-top: 2px outset #fff;
+    color: #000;
+}
+.p98 span:last-of-type {
+    border: 2px inset #fff;
+    padding: 0 10px;
+}
+.pxp {
+    background: linear-gradient(to bottom, #245edb 0%, #3f8cf3 9%, #245edb 18%, #245edb 92%, #333 100%) center/cover no-repeat;
+}
+
+.buttonStart10 {
+    cursor: default;
+    outline: none;
+    height: 16px;
+    padding: 8px 15px;
+}
+.buttonStart7 {
+    cursor: default;
+    outline: none;
+    height: 42px;
+    position: relative;
+    transform: translateX(20%) translateY(-20%);
+}
+.buttonStartxp {
+    cursor: default;
+    outline: none;
+    height: 28px;
+    margin: 0;
+    padding: 4px 22px;
+    background: linear-gradient(to bottom,
+    rgb(0, 150, 40) 0%,
+    rgb(0, 230, 80) 9%, 
+    rgb(0, 150, 30) 18%,
+    rgb(0, 168, 40) 92%,
+    #333333 100%)
+    center/cover no-repeat;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+.buttonStartxp::after {
+    content: 'Start';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+}
 .buttonStart98 {
     cursor: default;
     border: 2px outset #fff;
     box-shadow: 1px 1px #000;
+    height: 20px;
     outline: none;
+    margin: 3px;
 }
 .taskStart {
     position: absolute;

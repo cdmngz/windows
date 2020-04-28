@@ -9,8 +9,8 @@ Vue.component('windows-template', {
             <span>Windows {{ opcion }}</span>
         </div>
         
-        <p :class="['p', 'p'+opcion]">
-            <button :class="['buttonStart'+opcion]" @click="mostrar = !mostrar">Start</button>
+        <p :class="['p'+opcion]">
+            <img :src="[opcion+'start.png']" :class="['buttonStart'+opcion]" @click="mostrar = !mostrar">
             <span v-for="opcion in opciones" @click="cambiarWindow(opcion)">Windows {{ opcion }}</span>
             <span>{{ HHMM }}</span>
         </p>
