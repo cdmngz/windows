@@ -5,13 +5,11 @@ Vue.component('windows-template', {
         
         <nav-template :opcion="opcion"></nav-template>
         
-        <div v-if="mostrar" :class="['taskStart', 'taskStart'+opcion]">
-            <span>Windows {{ opcion }}</span>
-        </div>
+        <div v-if="mostrar" :class="['taskStart', 'taskStart'+opcion]"></div>
         
         <p :class="['p'+opcion]">
             <img :src="[opcion+'start.png']" :class="['buttonStart'+opcion]" @click="mostrar = !mostrar">
-            <span v-for="opcion in opciones" @click="cambiarWindow(opcion)">Windows {{ opcion }}</span>
+            <span v-for="opcion in opciones" @click="cambiarWindow(opcion)">W{{ opcion }}</span>
             <span>{{ HHMM }}</span>
         </p>
     </div>  
