@@ -1,7 +1,7 @@
 Vue.component('windows-template', {
     template:`
     <div>
-        <img class="imagen-fondo" :src="version">
+        <img v-if="opcion != 98" class="imagen-fondo" :src="[opcion+'.jpg']">
         
         <nav-template :opcion="opcion"></nav-template>
         
@@ -20,7 +20,7 @@ Vue.component('windows-template', {
             mostrar: false
         }
     },
-    props: ['version', 'opciones', 'opcion'],
+    props: ['opciones', 'opcion'],
     created() {
         this.getNow()
         setInterval(this.getNow, 10000);
